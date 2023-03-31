@@ -17,6 +17,17 @@ namespace BinanceCandlestickDownloader
         protected DateTime startDate;
         protected DateTime endDate;
 
+        public DownloaderBase() 
+        {
+        }
+
+        public DownloaderBase(string coinName_AllCapital, Period period, string startTime_yyyyMMdd, string endTime_yyyyMMdd)
+        {
+            coinName = coinName_AllCapital;
+            dataPeriod = period.Value;
+            startDate = DateTime.ParseExact(startTime_yyyyMMdd, "yyyyMMdd", CultureInfo.InvariantCulture);
+            endDate = DateTime.ParseExact(endTime_yyyyMMdd, "yyyyMMdd", CultureInfo.InvariantCulture);
+        }
         public void GetCandlestickFile()
         {
             var startDateForWhileLoop = startDate;

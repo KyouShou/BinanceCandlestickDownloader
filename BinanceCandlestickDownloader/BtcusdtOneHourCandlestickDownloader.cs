@@ -15,7 +15,7 @@ namespace BinanceCandlestickDownloader
         public BtcusdtOneHourCandlestickDownloader()
         {
             coinName = "BTC";
-            dataPeriod = "1h";
+            dataPeriod = Period.OneHour.ToString(); ;
             startDate = DateTime.ParseExact("20200101", "yyyyMMdd", CultureInfo.InvariantCulture);
             endDate = DateTime.ParseExact("20221204", "yyyyMMdd", CultureInfo.InvariantCulture);
         }
